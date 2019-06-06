@@ -1,0 +1,123 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pacmath}[2019-06-01 Pacmath]
+
+\RequirePackage{amsmath}
+\RequirePackage{pict2e}
+
+\makeatletter
+
+% Internal structure.
+\@ifdefinable\if@pac@eye@{\newif\if@pac@eye@}
+\@ifdefinable\if@pac@mouth@{\newif\if@pac@mouth@}
+
+\def\@pac@Large@man@scale{0.03}
+\def\@pac@Small@man@scale{0.015}
+
+\def\@pac@Large@man@X{2.61}
+\def\@pac@Large@man@Y{1.5}
+\def\@pac@Large@man@T{3}
+\def\@pac@Large@man@regionA@control@X{1.305}
+\def\@pac@Large@man@regionA@control@Y{0.75}
+\def\@pac@Large@man@regionB@control@X{1.74}
+\def\@pac@Large@man@regionB@control@Y{3}
+\def\@pac@Large@man@regionC@control@X{3.45}
+\def\@pac@Large@man@regionC@control@Y{0}
+\def\@pac@Large@man@eye@X{0.25}
+\def\@pac@Large@man@eye@Y{1.75}
+
+\def\@pac@Small@man@X{1.305}
+\def\@pac@Small@man@Y{0.75}
+\def\@pac@Small@man@T{1.5}
+\def\@pac@Small@man@regionA@control@X{0.6525}
+\def\@pac@Small@man@regionA@control@Y{0.375}
+\def\@pac@Small@man@regionB@control@X{0.87}
+\def\@pac@Small@man@regionB@control@Y{1.5}
+\def\@pac@Small@man@regionC@control@X{1.725}
+\def\@pac@Small@man@regionC@control@Y{0}
+\def\@pac@Small@man@eye@X{0.15}
+\def\@pac@Small@man@eye@Y{0.80}
+
+% Drawing macros.
+% Arguments: #1 -- font style
+%            #2 -- line thickness
+%            #3 -- eye diameter
+\newcommand*\@pac@Large@man[3]{%
+    \setlength\unitlength{\fontdimen 22 #1\tw@}%
+    \vrule \@width\z@ \@height 5\unitlength \@depth\thr@@\unitlength%
+    \begin{picture}(6,2)(-3,-1)
+        \linethickness{#2\p@}%
+        \qbezier(0, 0)(\@pac@Large@man@regionA@control@X, \@pac@Large@man@regionA@control@Y)(\@pac@Large@man@X, \@pac@Large@man@Y)%
+        \qbezier(\@pac@Large@man@X, \@pac@Large@man@Y)(\@pac@Large@man@regionB@control@X, \@pac@Large@man@regionB@control@Y)(0, \@pac@Large@man@T)%
+        \qbezier(0, \@pac@Large@man@T)(-\@pac@Large@man@regionB@control@X, \@pac@Large@man@regionB@control@Y)(-\@pac@Large@man@X, \@pac@Large@man@Y)%
+        \qbezier(-\@pac@Large@man@X, \@pac@Large@man@Y)(-\@pac@Large@man@regionC@control@X, 0)(-\@pac@Large@man@X, -\@pac@Large@man@Y)%
+        \qbezier(-\@pac@Large@man@X, -\@pac@Large@man@Y)(-\@pac@Large@man@regionB@control@X, -\@pac@Large@man@regionB@control@Y)(0, -\@pac@Large@man@T)%
+        \qbezier(0, -\@pac@Large@man@T)(\@pac@Large@man@regionB@control@X, -\@pac@Large@man@regionB@control@Y)(\@pac@Large@man@X, -\@pac@Large@man@Y)%
+        \qbezier(\@pac@Large@man@X, -\@pac@Large@man@Y)(\@pac@Large@man@regionA@control@X, -\@pac@Large@man@regionA@control@Y)(0, 0)%
+        \if@pac@eye@
+            \put(\@pac@Large@man@eye@X, \@pac@Large@man@eye@Y){\circle*{#3}}%
+        \fi
+    \end{picture}
+}
+
+\newcommand*\@pac@Small@man[3]{%
+    \setlength\unitlength{\fontdimen 22 #1\tw@}%
+    \vrule \@width\z@ \@height\z@ \@depth\@ne\unitlength%
+    \begin{picture}(3.5,2)(-2,-1)
+        \linethickness{#2\p@}%
+        \qbezier(0, 0)(\@pac@Small@man@regionA@control@X, \@pac@Small@man@regionA@control@Y)(\@pac@Small@man@X, \@pac@Small@man@Y)%
+        \qbezier(\@pac@Small@man@X, \@pac@Small@man@Y)(\@pac@Small@man@regionB@control@X, \@pac@Small@man@regionB@control@Y)(0, \@pac@Small@man@T)%
+        \qbezier(0, \@pac@Small@man@T)(-\@pac@Small@man@regionB@control@X, \@pac@Small@man@regionB@control@Y)(-\@pac@Small@man@X, \@pac@Small@man@Y)%
+        \qbezier(-\@pac@Small@man@X, \@pac@Small@man@Y)(-\@pac@Small@man@regionC@control@X, 0)(-\@pac@Small@man@X, -\@pac@Small@man@Y)%
+        \qbezier(-\@pac@Small@man@X, -\@pac@Small@man@Y)(-\@pac@Small@man@regionB@control@X, -\@pac@Small@man@regionB@control@Y)(0, -\@pac@Small@man@T)%
+        \qbezier(0, -\@pac@Small@man@T)(\@pac@Small@man@regionB@control@X, -\@pac@Small@man@regionB@control@Y)(\@pac@Small@man@X, -\@pac@Small@man@Y)%
+        \qbezier(\@pac@Small@man@X, -\@pac@Small@man@Y)(\@pac@Small@man@regionA@control@X, -\@pac@Small@man@regionA@control@Y)(0, 0)%
+        \if@pac@eye@
+            \put(\@pac@Small@man@eye@X, \@pac@Small@man@eye@Y){\circle*{#3}}%
+        \fi
+    \end{picture}
+}
+
+% Math mode verification.
+\newcommand*\@pac@if@bold@math{%
+    \def\@tempa{bold}%
+    \ifx\math@version\@tempa
+        \expandafter\@firstoftwo
+    \else
+        \expandafter\@secondoftwo
+    \fi
+}
+
+% User-level commands.
+\newcommand*\pacman{
+    \@ifstar
+        {\@pac@eye@false  \@pac@mathman}%
+        {\@pac@eye@true \@pac@mathman}%
+}
+
+\newcommand*\@pac@mathman{%
+    \mathop{%
+        \@pac@if@bold@math{%
+            \mathchoice{%
+                \@pac@Large@man \textfont {1.3}{}%
+            }{%
+                \@pac@Small@man \textfont {}{0.45}%
+            }{%
+                \@pac@Small@man \scriptfont {0.2}{0.1}%
+            }{%
+                \@pac@Small@man \scriptscriptfont {0.01}{0}%
+            }%
+        }{%
+            \mathchoice{%
+                \@pac@Large@man \textfont {1}{}%
+            }{%
+                \@pac@Small@man \textfont {}{0.45}%
+            }{%
+                \@pac@Small@man \scriptfont {0.2}{0.1}%
+            }{%
+                \@pac@Small@man \scriptscriptfont {0.01}{0}%
+            }%
+        }%
+    }% \displaylimits % as per default
+}
+
+\makeatother

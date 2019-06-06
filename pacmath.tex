@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{pacmath}
+
+\title{pacmath}
+\begin{document}
+A reduction students are likely to make:
+\[\pacman \frac{\sin x}{s} = x\,\mathrm{in}\].
+Compare to a built-in big operator:
+\[\bigoplus \frac{\sin x}{s} = x\,\mathrm{in}\]
+The same reduction as an in-line formula:
+\(\pacman \frac{\sin x}{s} = x\,\mathrm{in}\).
+
+Test for ``operator-like'' behavior: $\pacman x$ versus 
+$\pacman(x)$---does anybody note the difference?
+Let us also check that our $\pacman$~symbol does not make the lines further 
+apart than usual.  Here it is again:\nobreak\space $\pacman b$.
+A few more words to have enough plain lines in the paragraph to make it possible
+to compare the leading.  Was that enough?  No, it wasn't: we'd like to get at
+least one line further.
+
+Now with limits:
+\[
+    \pacman_{i=1}^{n} \frac
+        {\text{$i$-th magic term}}
+        {\text{$2^{i}$-th wizardry}}
+\]
+And repeated in-line: \( \pacman_{i=1}^{n} x_{i}y_{i} \).
+
+Test for other math styles: subscript~$F_{\!\pacman\alpha}$,
+in-line fraction \( \frac{\pacman m}{\pacman n} \),
+double superscript \( 2^{2^{\pacman \aleph_{0}}} \)
+(this one looks really awkward!).
+
+\begingroup
+    \Huge
+    Look at the details of the display-style version:
+    \[
+        \pacman
+            \genfrac{<}{>}{0pt}{}
+                {\text{something terribly}}{\text{complicated}}
+        = 0
+    \]
+\endgroup
+
+Now we've also got the \texttt{bold} math version:\mathversion{bold}
+\[
+    \pacman
+        \genfrac{<}{>}{0pt}{}
+            {\textbf{something terribly}}{\textbf{complicated}}
+    = 0
+\]
+Compare it with \texttt{normal} math\mathversion{normal}:
+\[
+    \pacman
+        \genfrac{<}{>}{0pt}{}
+            {\text{something terribly}}{\text{complicated}}
+    = 0
+\]
+In-line math comparison:
+{\boldmath $\pacman f(x)$} versus $\pacman f(x)$.
+
+\end{document}
+\end{document}
+
