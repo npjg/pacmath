@@ -79,6 +79,106 @@
     \end{picture}
 }
 
+
+%%% Large Ghost %%%
+\def\@pac@Large@ghost@body@height{6}
+\def\@pac@Large@ghost@body@arc@X{3}
+\def\@pac@Large@ghost@body@arc@Y{10}
+\def\@pac@Large@ghost@eyeL@X{4.25}
+\def\@pac@Large@ghost@eyeR@X{2.55}
+\def\@pac@Large@ghost@eye@Y{4.5}
+
+\def\@pac@Large@ghost@cloth@outer@control@Y{0.25}
+\def\@pac@Large@ghost@cloth@inner@control@Y{1}
+
+\def\@pac@Large@ghost@clothA@X{1}
+\def\@pac@Large@ghost@clothA@Y{1}
+\def\@pac@Large@ghost@clothA@control@X{.25}
+
+\def\@pac@Large@ghost@clothB@X{2}
+\def\@pac@Large@ghost@clothB@control@X{1.5}
+
+\def\@pac@Large@ghost@clothC@X{3}
+\def\@pac@Large@ghost@clothC@Y{1}
+\def\@pac@Large@ghost@clothC@control@X{2.5}
+
+\def\@pac@Large@ghost@clothD@X{4}
+\def\@pac@Large@ghost@clothD@control@X{3.5}
+
+\def\@pac@Large@ghost@clothE@X{5}
+\def\@pac@Large@ghost@clothE@Y{1}
+\def\@pac@Large@ghost@clothE@control@X{4.5}
+
+\def\@pac@Large@ghost@clothF@X{6}
+\def\@pac@Large@ghost@clothF@control@X{5.75}
+
+\newcommand*\@pac@Large@ghost[3]{%
+    \setlength\unitlength{\fontdimen 22 #1\tw@}%
+    \vrule \@width\z@ \@height 5\unitlength \@depth\thr@@\unitlength%
+    \begin{picture}(6,2)(-3,-1)
+        \linethickness{#2\p@}%
+        \put(0, 0){\line(0, \@pac@Large@ghost@body@height){\@pac@Large@ghost@body@height}}
+        \qbezier(0, \@pac@Large@ghost@body@height)(\@pac@Large@ghost@body@arc@X, \@pac@Large@ghost@body@arc@Y)(\@pac@Large@ghost@body@height, \@pac@Large@ghost@body@height)
+        \put(\@pac@Large@ghost@body@height, 0){\line(0, \@pac@Large@ghost@body@height){\@pac@Large@ghost@body@height}}
+        \qbezier(0,0)(\@pac@Large@ghost@clothA@control@X, \@pac@Large@ghost@cloth@outer@control@Y)(\@pac@Large@ghost@clothA@X, \@pac@Large@ghost@clothA@Y)
+        \qbezier(\@pac@Large@ghost@clothA@X, \@pac@Large@ghost@clothA@Y)(\@pac@Large@ghost@clothB@control@X, \@pac@Large@ghost@cloth@inner@control@Y)(\@pac@Large@ghost@clothB@X, 0)
+        \qbezier(\@pac@Large@ghost@clothB@X, 0)(\@pac@Large@ghost@clothC@control@X, \@pac@Large@ghost@cloth@inner@control@Y)(\@pac@Large@ghost@clothC@X, \@pac@Large@ghost@clothC@Y)
+        \qbezier(\@pac@Large@ghost@clothC@X, \@pac@Large@ghost@clothC@Y)(\@pac@Large@ghost@clothD@control@X, \@pac@Large@ghost@cloth@inner@control@Y)(\@pac@Large@ghost@clothD@X, 0)
+        \qbezier(\@pac@Large@ghost@clothD@X, 0)(\@pac@Large@ghost@clothE@control@X,\@pac@Large@ghost@cloth@inner@control@Y)(\@pac@Large@ghost@clothE@X, \@pac@Large@ghost@clothE@Y)
+        \qbezier(\@pac@Large@ghost@clothE@X, \@pac@Large@ghost@clothE@Y)(\@pac@Large@ghost@clothF@control@X, \@pac@Large@ghost@cloth@outer@control@Y)(\@pac@Large@ghost@clothF@X, 0)
+        \if@pac@eye@
+            \put(\@pac@Large@ghost@eyeL@X, \@pac@Large@ghost@eye@Y){\circle*{#3}}%
+            \put(\@pac@Large@ghost@eyeR@X, \@pac@Large@ghost@eye@Y){\circle*{#3}}%
+        \fi
+    \end{picture}
+}
+
+
+%%% Small Ghost %%%
+\def\@pac@Small@ghost@body@height{3}
+\def\@pac@Small@ghost@body@arc@X{1.5}
+\def\@pac@Small@ghost@body@arc@Y{5}
+\def\@pac@Small@ghost@eyeL@X{2.125}
+\def\@pac@Small@ghost@eyeR@X{1.275}
+\def\@pac@Small@ghost@eye@Y{2.25}
+
+\def\@pac@Small@ghost@cloth@outer@control@Y{0.2}
+\def\@pac@Small@ghost@cloth@inner@control@Y{0.9}
+
+\def\@pac@Small@ghost@clothA@X{0.5}
+\def\@pac@Small@ghost@clothA@Y{0.5}
+\def\@pac@Small@ghost@clothA@control@X{0.25}
+
+\def\@pac@Small@ghost@clothB@X{1.5}
+\def\@pac@Small@ghost@clothB@control@X{1}
+
+\def\@pac@Small@ghost@clothC@X{2.5}
+\def\@pac@Small@ghost@clothC@Y{0.5}
+\def\@pac@Small@ghost@clothC@control@X{2}
+
+\def\@pac@Small@ghost@clothD@X{3}
+\def\@pac@Small@ghost@clothD@control@X{3}
+
+\newcommand*\@pac@Small@ghost[3]{%
+    \setlength\unitlength{\fontdimen 22 #1\tw@}%
+    \vrule \@width\z@ \@height\z@ \@depth\@ne\unitlength%
+    \begin{picture}(3.5,2)(0,1)
+        \linethickness{#2\p@}%
+        \put(0, 0){\line(0, \@pac@Small@ghost@body@height){\@pac@Small@ghost@body@height}}
+        \qbezier(0, \@pac@Small@ghost@body@height)(\@pac@Small@ghost@body@arc@X, \@pac@Small@ghost@body@arc@Y)(\@pac@Small@ghost@body@height, \@pac@Small@ghost@body@height)
+        \put(\@pac@Small@ghost@body@height, 0){\line(0, \@pac@Small@ghost@body@height){\@pac@Small@ghost@body@height}}
+        \qbezier(0,0)(\@pac@Small@ghost@clothA@control@X, \@pac@Small@ghost@cloth@outer@control@Y)(\@pac@Small@ghost@clothA@X, \@pac@Small@ghost@clothA@Y)
+        \qbezier(\@pac@Small@ghost@clothA@X, \@pac@Small@ghost@clothA@Y)(\@pac@Small@ghost@clothB@control@X, \@pac@Small@ghost@cloth@inner@control@Y)(\@pac@Small@ghost@clothB@X, 0)
+        \qbezier(\@pac@Small@ghost@clothB@X, 0)(\@pac@Small@ghost@clothC@control@X, \@pac@Small@ghost@cloth@inner@control@Y)(\@pac@Small@ghost@clothC@X, \@pac@Small@ghost@clothC@Y)
+        \qbezier(\@pac@Small@ghost@clothC@X, \@pac@Small@ghost@clothC@Y)(\@pac@Small@ghost@clothD@control@X, \@pac@Small@ghost@cloth@outer@control@Y)(\@pac@Small@ghost@clothD@X, 0)
+        \if@pac@eye@
+            \put(\@pac@Small@ghost@eyeL@X, \@pac@Small@ghost@eye@Y){\circle*{#3}}
+            \put(\@pac@Small@ghost@eyeR@X, \@pac@Small@ghost@eye@Y){\circle*{#3}}
+        \fi
+    \end{picture}
+}
+
+
 % Math mode verification.
 \newcommand*\@pac@if@bold@math{%
     \def\@tempa{bold}%
@@ -134,10 +234,43 @@
     }% \displaylimits % as per default
 }
 
+\newcommand*\@pac@mathghost{%
+    \mathop{%
+        \@pac@if@bold@math{%
+            \mathchoice{%
+                \@pac@Large@ghost \textfont {\@pac@Large@bold@textfont@thickness}{}%
+            }{%
+                \@pac@Small@ghost \textfont {\@pac@Small@bold@textfont@thickness}{\@pac@Small@bold@textfont@eye}%
+            }{%
+                \@pac@Small@ghost \scriptfont {\@pac@Small@bold@scriptfont@thickness}{\@pac@Small@bold@scriptfont@eye}%
+            }{%
+                \@pac@Small@ghost \scriptscriptfont {\@pac@Small@bold@sscriptfont@thickness}{\@pac@Small@bold@sscriptfont@eye}%
+            }%
+        }{%
+            \mathchoice{%
+                \@pac@Large@ghost \textfont {\@pac@Large@textfont@thickness}{}%
+            }{%
+                \@pac@Small@ghost \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
+            }{%
+                \@pac@Small@ghost \scriptfont {\@pac@Small@scriptfont@thickness}{\@pac@Small@scriptfont@eye}%
+            }{%
+                \@pac@Small@ghost \scriptscriptfont {\@pac@Small@sscriptfont@thickness}{\@pac@Small@sscriptfont@eye}%
+            }%
+        }%
+    }% \displaylimits % as per default
+}
+
+
 % User-level commands.
 \newcommand*\pacman{
     \@ifstar
         {\@pac@eye@false \@pac@mathman}%
         {\@pac@eye@true  \@pac@mathman}%
+}
+
+\newcommand*\pacghost{
+    \@ifstar
+        {\@pac@eye@false \@pac@mathghost}%
+        {\@pac@eye@true  \@pac@mathghost}%
 }
 \makeatother
