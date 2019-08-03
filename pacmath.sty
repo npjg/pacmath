@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{pacmath}[2019-06-16 Pacmath]
+\ProvidesPackage{pacmath}[2019-08-03 Pacmath]
 
 \RequirePackage{amsmath}
 \RequirePackage{pict2e}
@@ -83,9 +83,9 @@
 %%% Large Ghost %%%
 \def\@pac@Large@ghost@body@height{6}
 \def\@pac@Large@ghost@body@arc@X{3}
-\def\@pac@Large@ghost@body@arc@Y{10}
-\def\@pac@Large@ghost@eyeL@X{4.25}
-\def\@pac@Large@ghost@eyeR@X{2.55}
+\def\@pac@Large@ghost@body@arc@Y{9.25}
+\def\@pac@Large@ghost@eyeL@X{4.35}
+\def\@pac@Large@ghost@eyeR@X{2.50}
 \def\@pac@Large@ghost@eye@Y{4.5}
 
 \def\@pac@Large@ghost@cloth@outer@control@Y{0.25}
@@ -115,7 +115,7 @@
 \newcommand*\@pac@Large@ghost[3]{%
     \setlength\unitlength{\fontdimen 22 #1\tw@}%
     \vrule \@width\z@ \@height 5\unitlength \@depth\thr@@\unitlength%
-    \begin{picture}(6,2)(-3,-1)
+    \begin{picture}(10,4)(-3,2.5)
         \linethickness{#2\p@}%
         \put(0, 0){\line(0, \@pac@Large@ghost@body@height){\@pac@Large@ghost@body@height}}
         \qbezier(0, \@pac@Large@ghost@body@height)(\@pac@Large@ghost@body@arc@X, \@pac@Large@ghost@body@arc@Y)(\@pac@Large@ghost@body@height, \@pac@Large@ghost@body@height)
