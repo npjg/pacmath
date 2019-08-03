@@ -15,39 +15,6 @@
 %            #2 -- line thickness
 %            #3 -- eye diameter
 
-
-%%% Large Pacman %%%
-\def\@pac@Large@man@X{2.61}
-\def\@pac@Large@man@Y{1.5}
-\def\@pac@Large@man@T{3}
-\def\@pac@Large@man@regionA@control@X{1.305}
-\def\@pac@Large@man@regionA@control@Y{0.75}
-\def\@pac@Large@man@regionB@control@X{1.74}
-\def\@pac@Large@man@regionB@control@Y{3}
-\def\@pac@Large@man@regionC@control@X{3.45}
-\def\@pac@Large@man@regionC@control@Y{0}
-\def\@pac@Large@man@eye@X{0.25}
-\def\@pac@Large@man@eye@Y{1.75}
-
-\newcommand*\@pac@Large@man[3]{%
-    \setlength\unitlength{\fontdimen 22 #1\tw@}%
-    \vrule \@width\z@ \@height 5\unitlength \@depth\thr@@\unitlength%
-    \begin{picture}(6,2)(-3,-1)
-        \linethickness{#2\p@}%
-        \qbezier(0, 0)(\@pac@Large@man@regionA@control@X, \@pac@Large@man@regionA@control@Y)(\@pac@Large@man@X, \@pac@Large@man@Y)%
-        \qbezier(\@pac@Large@man@X, \@pac@Large@man@Y)(\@pac@Large@man@regionB@control@X, \@pac@Large@man@regionB@control@Y)(0, \@pac@Large@man@T)%
-        \qbezier(0, \@pac@Large@man@T)(-\@pac@Large@man@regionB@control@X, \@pac@Large@man@regionB@control@Y)(-\@pac@Large@man@X, \@pac@Large@man@Y)%
-        \qbezier(-\@pac@Large@man@X, \@pac@Large@man@Y)(-\@pac@Large@man@regionC@control@X, 0)(-\@pac@Large@man@X, -\@pac@Large@man@Y)%
-        \qbezier(-\@pac@Large@man@X, -\@pac@Large@man@Y)(-\@pac@Large@man@regionB@control@X, -\@pac@Large@man@regionB@control@Y)(0, -\@pac@Large@man@T)%
-        \qbezier(0, -\@pac@Large@man@T)(\@pac@Large@man@regionB@control@X, -\@pac@Large@man@regionB@control@Y)(\@pac@Large@man@X, -\@pac@Large@man@Y)%
-        \qbezier(\@pac@Large@man@X, -\@pac@Large@man@Y)(\@pac@Large@man@regionA@control@X, -\@pac@Large@man@regionA@control@Y)(0, 0)%
-        \if@pac@eye@
-            \put(\@pac@Large@man@eye@X, \@pac@Large@man@eye@Y){\circle*{#3}}%
-        \fi
-    \end{picture}
-}
-
-
 %%% Small Pacman %%%
 \def\@pac@Small@man@X{1.305}
 \def\@pac@Small@man@Y{0.80}
