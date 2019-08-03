@@ -212,6 +212,32 @@
     \mathop{%
         \@pac@if@bold@math{%
             \mathchoice{%
+                \@pac@Small@man \textfont {\@pac@Small@bold@textfont@thickness}{\@pac@Small@bold@textfont@eye}%
+            }{%
+                \@pac@Small@man \textfont {\@pac@Small@bold@textfont@thickness}{\@pac@Small@bold@textfont@eye}%
+            }{%
+                \@pac@Small@man \scriptfont {\@pac@Small@bold@scriptfont@thickness}{\@pac@Small@bold@scriptfont@eye}%
+            }{%
+                \@pac@Small@man \scriptscriptfont {\@pac@Small@bold@sscriptfont@thickness}{\@pac@Small@bold@sscriptfont@eye}%
+            }%
+        }{%
+            \mathchoice{%
+                \@pac@Small@man \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
+            }{%
+                \@pac@Small@man \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
+            }{%
+                \@pac@Small@man \scriptfont {\@pac@Small@scriptfont@thickness}{\@pac@Small@scriptfont@eye}%
+            }{%
+                \@pac@Small@man \scriptscriptfont {\@pac@Small@sscriptfont@thickness}{\@pac@Small@sscriptfont@eye}%
+            }%
+        }%
+    }% \displaylimits % as per default
+}
+
+  \newcommand*\@pac@big@mathman{%
+    \mathop{%
+        \@pac@if@bold@math{%
+            \mathchoice{%
                 \@pac@Large@man \textfont {\@pac@Large@bold@textfont@thickness}{}%
             }{%
                 \@pac@Small@man \textfont {\@pac@Small@bold@textfont@thickness}{\@pac@Small@bold@textfont@eye}%
@@ -266,6 +292,11 @@
     \@ifstar
         {\@pac@eye@false \@pac@mathman}%
         {\@pac@eye@true  \@pac@mathman}%
+}
+\newcommand*\bigpacman{
+    \@ifstar
+        {\@pac@eye@false \@pac@big@mathman}%
+        {\@pac@eye@true  \@pac@big@mathman}%
 }
 
 \newcommand*\pacghost{
