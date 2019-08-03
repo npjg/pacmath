@@ -234,32 +234,6 @@
     }% \displaylimits % as per default
 }
 
-  \newcommand*\@pac@big@mathman{%
-    \mathop{%
-        \@pac@if@bold@math{%
-            \mathchoice{%
-                \@pac@Large@man \textfont {\@pac@Large@bold@textfont@thickness}{}%
-            }{%
-                \@pac@Small@man \textfont {\@pac@Small@bold@textfont@thickness}{\@pac@Small@bold@textfont@eye}%
-            }{%
-                \@pac@Small@man \scriptfont {\@pac@Small@bold@scriptfont@thickness}{\@pac@Small@bold@scriptfont@eye}%
-            }{%
-                \@pac@Small@man \scriptscriptfont {\@pac@Small@bold@sscriptfont@thickness}{\@pac@Small@bold@sscriptfont@eye}%
-            }%
-        }{%
-            \mathchoice{%
-                \@pac@Large@man \textfont {\@pac@Large@textfont@thickness}{}%
-            }{%
-                \@pac@Small@man \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
-            }{%
-                \@pac@Small@man \scriptfont {\@pac@Small@scriptfont@thickness}{\@pac@Small@scriptfont@eye}%
-            }{%
-                \@pac@Small@man \scriptscriptfont {\@pac@Small@sscriptfont@thickness}{\@pac@Small@sscriptfont@eye}%
-            }%
-        }%
-    }% \displaylimits % as per default
-}
-
 \newcommand*\@pac@mathghost{%
     \mathop{%
         \@pac@if@bold@math{%
@@ -286,30 +260,16 @@
     }% \displaylimits % as per default
 }
 
-\newcommand*\@pac@big@mathghost{%
-    \mathop{%
-        \@pac@if@bold@math{%
-            \mathchoice{%
-                \@pac@Large@bold@ghost \textfont {\@pac@Large@bold@textfont@thickness}{}%
-            }{%
-                \@pac@Small@ghost \textfont {\@pac@Small@bold@textfont@thickness}{\@pac@Small@bold@textfont@eye}%
-            }{%
-                \@pac@Small@ghost \scriptfont {\@pac@Small@bold@scriptfont@thickness}{\@pac@Small@bold@scriptfont@eye}%
-            }{%
-                \@pac@Small@ghost \scriptscriptfont {\@pac@Small@bold@sscriptfont@thickness}{\@pac@Small@bold@sscriptfont@eye}%
-            }%
-        }{%
-            \mathchoice{%
-                \@pac@Large@ghost \textfont {\@pac@Large@textfont@thickness}{}%
-            }{%
-                \@pac@Small@ghost \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
-            }{%
-                \@pac@Small@ghost \scriptfont {\@pac@Small@scriptfont@thickness}{\@pac@Small@scriptfont@eye}%
-            }{%
-                \@pac@Small@ghost \scriptscriptfont {\@pac@Small@sscriptfont@thickness}{\@pac@Small@sscriptfont@eye}%
-            }%
-        }%
-    }% \displaylimits % as per default
+% scaling backend
+\DeclareRobustCommand\bigop[2][1]{%
+  \mathop{\vphantom{\sum}\mathpalette\bigop@{{#1}{#2}}}\slimits@
+}
+\newcommand{\bigop@}[2]{\bigop@@#1#2}
+\newcommand{\bigop@@}[3]{%
+  \vcenter{%
+    \sbox\z@{$#1\sum$}%
+    \hbox{\resizebox{\ifx#1\displaystyle#2\fi\dimexpr\ht\z@+\dp\z@}{!}{$\m@th#3$}}%
+  }%
 }
 
 % User-level commands.
@@ -320,18 +280,18 @@
 }
 \newcommand*\bigpacman{
     \@ifstar
-        {\@pac@eye@false \@pac@big@mathman}%
-        {\@pac@eye@true  \@pac@big@mathman}%
+        {\DOTSB\bigop[0.77]{\@pac@eye@false \@pac@mathman}}%
+        {\DOTSB\bigop[0.77]{\@pac@eye@true  \@pac@mathman}}%
 }
 
-\newcommand*\pacghost{
+\newcommand*\ghost{
     \@ifstar
         {\@pac@eye@false \@pac@mathghost}%
         {\@pac@eye@true  \@pac@mathghost}%
 }
-\newcommand*\bigpacghost{
+\newcommand*\bigghost{
     \@ifstar
-        {\@pac@eye@false \@pac@big@mathghost}%
-        {\@pac@eye@true  \@pac@big@mathghost}%
+        {\DOTSB\bigop[0.77]{\@pac@eye@false \@pac@mathghost}}%
+        {\DOTSB\bigop[0.77]{\@pac@eye@true  \@pac@mathghost}}%
 }
 \makeatother
