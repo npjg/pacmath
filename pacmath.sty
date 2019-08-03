@@ -50,7 +50,7 @@
 
 %%% Small Pacman %%%
 \def\@pac@Small@man@X{1.305}
-\def\@pac@Small@man@Y{0.75}
+\def\@pac@Small@man@Y{0.80}
 \def\@pac@Small@man@T{1.5}
 \def\@pac@Small@man@regionA@control@X{0.6525}
 \def\@pac@Small@man@regionA@control@Y{0.375}
@@ -64,7 +64,7 @@
 \newcommand*\@pac@Small@man[3]{%
     \setlength\unitlength{\fontdimen 22 #1\tw@}%
     \vrule \@width\z@ \@height\z@ \@depth\@ne\unitlength%
-    \begin{picture}(3.5,2)(-2,-1)
+    \begin{picture}(2.75,2.85)(-1.35,-1.)
         \linethickness{#2\p@}%
         \qbezier(0, 0)(\@pac@Small@man@regionA@control@X, \@pac@Small@man@regionA@control@Y)(\@pac@Small@man@X, \@pac@Small@man@Y)%
         \qbezier(\@pac@Small@man@X, \@pac@Small@man@Y)(\@pac@Small@man@regionB@control@X, \@pac@Small@man@regionB@control@Y)(0, \@pac@Small@man@T)%
@@ -162,7 +162,7 @@
 \newcommand*\@pac@Small@ghost[3]{%
     \setlength\unitlength{\fontdimen 22 #1\tw@}%
     \vrule \@width\z@ \@height\z@ \@depth\@ne\unitlength%
-    \begin{picture}(3.5,2)(0,1)
+    \begin{picture}(3.6,3.6)(-0.2,.7)
         \linethickness{#2\p@}%
         \put(0, 0){\line(0, \@pac@Small@ghost@body@height){\@pac@Small@ghost@body@height}}
         \qbezier(0, \@pac@Small@ghost@body@height)(\@pac@Small@ghost@body@arc@X, \@pac@Small@ghost@body@arc@Y)(\@pac@Small@ghost@body@height, \@pac@Small@ghost@body@height)
@@ -201,7 +201,7 @@
 
 \def\@pac@Large@textfont@thickness{0.82}
 \def\@pac@Large@textfont@eye{}
-\def\@pac@Small@textfont@thickness{0.55}
+\def\@pac@Small@textfont@thickness{0.45}
 \def\@pac@Small@textfont@eye{0.45}
 \def\@pac@Small@scriptfont@thickness{0.2}
 \def\@pac@Small@scriptfont@eye{0.4}
