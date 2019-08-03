@@ -264,7 +264,33 @@
     \mathop{%
         \@pac@if@bold@math{%
             \mathchoice{%
-                \@pac@Large@ghost \textfont {\@pac@Large@bold@textfont@thickness}{}%
+                \@pac@Small@ghost \textfont {\@pac@Small@bold@textfont@thickness}{\@pac@Small@bold@textfont@eye}%
+            }{%
+                \@pac@Small@ghost \textfont {\@pac@Small@bold@textfont@thickness}{\@pac@Small@bold@textfont@eye}%
+            }{%
+                \@pac@Small@ghost \scriptfont {\@pac@Small@bold@scriptfont@thickness}{\@pac@Small@bold@scriptfont@eye}%
+            }{%
+                \@pac@Small@ghost \scriptscriptfont {\@pac@Small@bold@sscriptfont@thickness}{\@pac@Small@bold@sscriptfont@eye}%
+            }%
+        }{%
+            \mathchoice{%
+                \@pac@Small@ghost \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
+            }{%
+                \@pac@Small@ghost \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
+            }{%
+                \@pac@Small@ghost \scriptfont {\@pac@Small@scriptfont@thickness}{\@pac@Small@scriptfont@eye}%
+            }{%
+                \@pac@Small@ghost \scriptscriptfont {\@pac@Small@sscriptfont@thickness}{\@pac@Small@sscriptfont@eye}%
+            }%
+        }%
+    }% \displaylimits % as per default
+}
+
+\newcommand*\@pac@big@mathghost{%
+    \mathop{%
+        \@pac@if@bold@math{%
+            \mathchoice{%
+                \@pac@Large@bold@ghost \textfont {\@pac@Large@bold@textfont@thickness}{}%
             }{%
                 \@pac@Small@ghost \textfont {\@pac@Small@bold@textfont@thickness}{\@pac@Small@bold@textfont@eye}%
             }{%
@@ -286,7 +312,6 @@
     }% \displaylimits % as per default
 }
 
-
 % User-level commands.
 \newcommand*\pacman{
     \@ifstar
@@ -303,5 +328,10 @@
     \@ifstar
         {\@pac@eye@false \@pac@mathghost}%
         {\@pac@eye@true  \@pac@mathghost}%
+}
+\newcommand*\bigpacghost{
+    \@ifstar
+        {\@pac@eye@false \@pac@big@mathghost}%
+        {\@pac@eye@true  \@pac@big@mathghost}%
 }
 \makeatother
