@@ -1,64 +1,64 @@
 \documentclass{article}
 \usepackage{pacmath}
+\usepackage{graphicx}
+\usepackage{epigraph}
+\usepackage{titling}
 
-\title{pacmath}
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+
+\title{Pacmath}
+\preauthor{} \author{} \postauthor{}
+\predate{} \date{} \postdate{}
+
+\newcommand{\bigA}{\DOTSB\bigop[0.92]{\mathrm{A}}}
+\newcommand{\bigDelta}{\DOTSB\bigop[1.05]{\Delta}}
+
 \begin{document}
-A reduction students are likely to make:
-\[\pacman \frac{\sin x}{s} = x\,\mathrm{in}\].
-Compare to a built-in big operator:
-\[\bigoplus \frac{\sin x}{s} = x\,\mathrm{in}\]
-The same reduction as an in-line formula:
-\(\pacman \frac{\sin x}{s} = x\,\mathrm{in}\).
+\maketitle
+\epigraph{``Let's call this thing Pac-Man."}{--- \textup{Dr. Cook}}
+\section{Introduction}
+Pacmath finally brings everyone's favorite ad-hoc mathematical symbol to \LaTeX. Don't know what to call an ugly expression you would hate to rewrite again and again? Don't fret, just call it $\pacman$ !
 
-Test for ``operator-like'' behavior: $\pacman x$ versus 
-$\pacman(x)$---does anybody note the difference?
-Let us also check that our $\pacman$~symbol does not make the lines further 
-apart than usual.  Here it is again:\nobreak\space $\pacman b$.
-A few more words to have enough plain lines in the paragraph to make it possible
-to compare the leading.  Was that enough?  No, it wasn't: we'd like to get at
-least one line further.
-
-Now with limits:
+\section{Operator}
+$\pacman$ is not a real character; he isn't found in any \TeX{} font. He is a picture with special configuration so he blends in with the crowd. His shape-shifting powers are quite amazing. He has real \TeX{} \textit{bona fides}. He can use his powers to convert arbitrary symbols and pictures to operators. Here, we'll make some new operators and put our friend in there with them:
 \[
-    \pacman_{i=1}^{n} \frac
-        {\text{$i$-th magic term}}
-        {\text{$2^{i}$-th wizardry}}
+\sum_{i=1}^n\bigA_{i=1}^n\bigDelta_{i=1}^n\bigpacman_{i=1}^n \cdots.
 \]
-And repeated in-line: \( \pacman_{i=1}^{n} x_{i}y_{i} \).
+Slick, eh? We put him in there using the \texttt{\textbackslash bigpacman} command, just like you would use \texttt{\textbackslash bigoplus}.
 
-Test for other math styles: subscript~$F_{\!\pacman\alpha}$,
-in-line fraction \( \frac{\pacman m}{\pacman n} \),
-double superscript \( 2^{2^{\pacman \aleph_{0}}} \)
-(this one looks really awkward!).
+If that didn't scare you, maybe this will:
+\[
+\sum_{i=1}^n\bigA_{i=1}^n\bigDelta_{i=1}^n\bigghost_{i=1}^n \cdots.
+\]
+You can summon a big ghost with \texttt{\textbackslash bigghost}.
 
-\begingroup
-    \Huge
-    Look at the details of the display-style version:
-    \[
-        \pacman
-            \genfrac{<}{>}{0pt}{}
-                {\text{something terribly}}{\text{complicated}}
-        = 0
-    \]
-\endgroup
+Even in inline math mode, the limits still behave as you would expect: $\pacman_{i=1}^n$.
 
+\section{Symbol}
+Our friend doesn't always need these superpowers, however. He's also fine going incognito inside a paragraph. Let's test for ``operator-like'' behavior: $f(x)$ versus $\pacman(x)$. He looks like he's just about ready to gobble up that $x$! But here comes Blinky to stop him! $$\ghost(x) \cdots \cdots \pacman(x).$$
+
+\section{Eyes}
+Just like you remove numbering from an equation with an asterisk, so you can remove the eyes from our friend and his ghost.
+$$\ghost*(x) \cdots \cdots \pacman*(x).$$
+
+\section{Bold}
 Now we've also got the \texttt{bold} math version:\mathversion{bold}
 \[
-    \pacman
+    \bigpacman
         \genfrac{<}{>}{0pt}{}
             {\textbf{something terribly}}{\textbf{complicated}}
     = 0
 \]
 Compare it with \texttt{normal} math\mathversion{normal}:
 \[
-    \pacman
+    \bigpacman
         \genfrac{<}{>}{0pt}{}
             {\text{something terribly}}{\text{complicated}}
     = 0
 \]
-In-line math comparison:
-{\boldmath $\pacman f(x)$} versus $\pacman f(x)$.
+
+\section{Edge Cases}
+$\pacman$ is at home in all math styles. Just check this out: subscript~$F_{\pacman\alpha}$; in-line fraction \( \frac{\pacman m}{\pacman n} \); double superscript \( 2^{2^{\, \pacman \aleph_{0}}} \). Note that as our friend shrinks, his eye cleanly disappears.
 
 \end{document}
-\end{document}
-
