@@ -6,6 +6,19 @@
 
 \makeatletter
 
+% Fix pict2e bug that prevents using decimal macro expansions.
+% See the author's question at
+% https://tex.stackexchange.com/questions/502733/pict2e-cannot-use-decimal-line-slope-argument-inserted-from-macro/502735#502735
+\renewcommand*\pIIe@checkslopeargs[3]{%
+  \edef\@tempa{#1}\expandafter\pIIe@checkslopearg\@tempa.:{#3}%
+  \edef\@tempa{#2}\expandafter\pIIe@checkslopearg\@tempa.:{#3}%
+  \ifdim #1\p@=\z@ \ifdim #2\p@=\z@ \@badlinearg \fi\fi}
+\def\pIIe@checkslopearg #1.#2:#3{%
+  \def\@tempa{#1}%
+  \ifx\@tempa\empty\def\@tempa{0}\fi
+  \ifx\@tempa\space\def\@tempa{0}\fi%  V added space
+  \ifnum\ifnum\@tempa<\z@-\fi\@tempa>#3 \@badlinearg \fi}
+
 % Internal structure.
 \@ifdefinable\if@pac@eye@{\newif\if@pac@eye@}
 \@ifdefinable\if@pac@mouth@{\newif\if@pac@mouth@}
