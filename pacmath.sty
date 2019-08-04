@@ -19,16 +19,19 @@
   \ifx\@tempa\space\def\@tempa{0}\fi%  V added space
   \ifnum\ifnum\@tempa<\z@-\fi\@tempa>#3 \@badlinearg \fi}
 
+
 % Internal structure.
 \@ifdefinable\if@pac@eye@{\newif\if@pac@eye@}
 \@ifdefinable\if@pac@mouth@{\newif\if@pac@mouth@}
+
 
 % Drawing macros.
 % Arguments: #1 -- font style
 %            #2 -- line thickness
 %            #3 -- eye diameter
 
-%%% Small Pacman %%%
+
+%%% Pacman %%%
 \def\@pac@Small@man@X{1.305}
 \def\@pac@Small@man@Y{0.80}
 \def\@pac@Small@man@T{1.5}
@@ -60,11 +63,11 @@
 }
 
 
-%%% Small Ghost %%%
+%%% Ghost %%%
 \def\@pac@Small@ghost@body@height{2.5}
 \def\@pac@Small@ghost@body@width{3}
 \def\@pac@Small@ghost@body@arc@X{1.5}
-\def\@pac@Small@ghost@body@arc@Y{5.}
+\def\@pac@Small@ghost@body@arc@Y{5}
 \def\@pac@Small@ghost@eyeL@X{1.12}
 \def\@pac@Small@ghost@eyeR@X{2.12}
 \def\@pac@Small@ghost@eye@Y{2.25}
@@ -169,6 +172,7 @@
     }% \displaylimits % as per default
 }
 
+
 \newcommand*\@pac@mathghost{%
     \mathop{%
         \@pac@if@bold@math{%
@@ -195,7 +199,8 @@
     }% \displaylimits % as per default
 }
 
-% scaling backend
+
+% Bigop scaling backend.
 \DeclareRobustCommand\bigop[2][1]{%
   \mathop{\vphantom{\sum}\mathpalette\bigop@{{#1}{#2}}}\slimits@
 }
