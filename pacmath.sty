@@ -125,22 +125,23 @@
     \fi
 }
 
+
 % Mode-selection backend.
-\def\@pac@Large@bold@textfont@thickness{0.95}
-\def\@pac@Large@bold@textfont@eye{}
-\def\@pac@Small@bold@textfont@thickness{0.60}
+\def\@pac@Small@bold@textfont@thickness{0.5}
 \def\@pac@Small@bold@textfont@eye{0.45}
 \def\@pac@Small@bold@scriptfont@thickness{0.2}
-\def\@pac@Small@bold@scriptfont@eye{0.01}
+\def\@pac@Small@bold@scriptfont@eye{0.1}
 \def\@pac@Small@bold@sscriptfont@thickness{0.01}
 \def\@pac@Small@bold@sscriptfont@eye{0}
 
-\def\@pac@Small@textfont@thickness{0.4}
-\def\@pac@Small@textfont@eye{0.45}
+\def\@pac@Small@textfont@man@thickness{0.4}
+\def\@pac@Small@textfont@ghost@thickness{0.45}
+\def\@pac@Small@textfont@man@eye{0.4}
+\def\@pac@Small@textfont@ghost@eye{0.5}
 \def\@pac@Small@scriptfont@thickness{0.2}
-\def\@pac@Small@scriptfont@eye{0.4}
+\def\@pac@Small@scriptfont@eye{0.3}
 \def\@pac@Small@sscriptfont@thickness{0.01}
-\def\@pac@Small@sscriptfont@eye{0.2}
+\def\@pac@Small@sscriptfont@eye{0}
 
 \newcommand*\@pac@mathman{%
     \mathop{%
@@ -156,9 +157,9 @@
             }%
         }{%
             \mathchoice{%
-                \@pac@Small@man \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
+                \@pac@Small@man \textfont {\@pac@Small@textfont@man@thickness}{\@pac@Small@textfont@man@eye}%
             }{%
-                \@pac@Small@man \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
+                \@pac@Small@man \textfont {\@pac@Small@textfont@man@thickness}{\@pac@Small@textfont@man@eye}%
             }{%
                 \@pac@Small@man \scriptfont {\@pac@Small@scriptfont@thickness}{\@pac@Small@scriptfont@eye}%
             }{%
@@ -182,9 +183,9 @@
             }%
         }{%
             \mathchoice{%
-                \@pac@Small@ghost \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
+                \@pac@Small@ghost \textfont {\@pac@Small@textfont@ghost@thickness}{\@pac@Small@textfont@ghost@eye}%
             }{%
-                \@pac@Small@ghost \textfont {\@pac@Small@textfont@thickness}{\@pac@Small@textfont@eye}%
+                \@pac@Small@ghost \textfont {\@pac@Small@textfont@ghost@thickness}{\@pac@Small@textfont@ghost@eye}%
             }{%
                 \@pac@Small@ghost \scriptfont {\@pac@Small@scriptfont@thickness}{\@pac@Small@scriptfont@eye}%
             }{%
