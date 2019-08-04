@@ -66,13 +66,13 @@
 
 
 %%% Ghost %%%
-\def\@pac@ghost@body@height{2.5}
+\def\@pac@ghost@body@height{2.68}
 \def\@pac@ghost@body@width{3}
 \def\@pac@ghost@body@arc@X{1.5}
 \def\@pac@ghost@body@arc@Y{5}
-\def\@pac@ghost@eyeL@X{1.12}
-\def\@pac@ghost@eyeR@X{2.12}
-\def\@pac@ghost@eye@Y{2.25}
+\def\@pac@ghost@eyeL@X{1.15}
+\def\@pac@ghost@eyeR@X{2.15}
+\def\@pac@ghost@eye@Y{2.35}
 
 \def\@pac@ghost@cloth@outer@control@Y{0.5}
 \def\@pac@ghost@cloth@inner@control@Y{0.5}
@@ -102,7 +102,7 @@
 \newcommand*\@pac@ghost[4]{%
     \setlength\unitlength{\fontdimen 22 #1\tw@}%
     \vrule \@width\z@ \@height\z@ \@depth\@ne\unitlength%
-    \begin{picture}(3.6,3.6)(-0.2,.65)
+    \begin{picture}(3.6,3.8)(-0.2,.65)
         \linethickness{#4\p@}%
         \put(0, 0){\line(0, \@pac@ghost@body@height){\@pac@ghost@body@height}}
         \linethickness{#2\p@}%
@@ -146,9 +146,9 @@
 \def\@pac@bold@sscriptfont@eye{0}
 
 \def\@pac@textfont@man@thickness{0.56}
-\def\@pac@textfont@man@thickness@nib{0.4}
-\def\@pac@textfont@ghost@thickness{0.55}
-\def\@pac@textfont@ghost@thickness@nib{0.42}
+\def\@pac@textfont@man@thickness@nib{0.45}
+\def\@pac@textfont@ghost@thickness{0.6}
+\def\@pac@textfont@ghost@thickness@nib{0.5}
 \def\@pac@textfont@man@eye{0.4}
 \def\@pac@textfont@ghost@eye{0.5}
 \def\@pac@scriptfont@thickness{0.2}
