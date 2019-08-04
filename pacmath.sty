@@ -50,32 +50,39 @@
 %%% Small Ghost %%%
 \def\@pac@Small@ghost@body@height{3}
 \def\@pac@Small@ghost@body@arc@X{1.5}
-\def\@pac@Small@ghost@body@arc@Y{5}
+\def\@pac@Small@ghost@body@arc@Y{4.5}
 \def\@pac@Small@ghost@eyeL@X{2.125}
-\def\@pac@Small@ghost@eyeR@X{1.275}
+\def\@pac@Small@ghost@eyeR@X{1.2}
 \def\@pac@Small@ghost@eye@Y{2.25}
 
-\def\@pac@Small@ghost@cloth@outer@control@Y{0.2}
-\def\@pac@Small@ghost@cloth@inner@control@Y{0.9}
+\def\@pac@Small@ghost@cloth@outer@control@Y{0.4}
+\def\@pac@Small@ghost@cloth@inner@control@Y{0.4}
 
 \def\@pac@Small@ghost@clothA@X{0.5}
-\def\@pac@Small@ghost@clothA@Y{0.5}
-\def\@pac@Small@ghost@clothA@control@X{0.25}
+\def\@pac@Small@ghost@clothA@Y{0.7}
+\def\@pac@Small@ghost@clothA@control@X{.125}
 
-\def\@pac@Small@ghost@clothB@X{1.5}
-\def\@pac@Small@ghost@clothB@control@X{1}
+\def\@pac@Small@ghost@clothB@X{1}
+\def\@pac@Small@ghost@clothB@control@X{0.75}
 
-\def\@pac@Small@ghost@clothC@X{2.5}
-\def\@pac@Small@ghost@clothC@Y{0.5}
-\def\@pac@Small@ghost@clothC@control@X{2}
+\def\@pac@Small@ghost@clothC@X{1.5}
+\def\@pac@Small@ghost@clothC@Y{0.7}
+\def\@pac@Small@ghost@clothC@control@X{1.25}
 
-\def\@pac@Small@ghost@clothD@X{3}
-\def\@pac@Small@ghost@clothD@control@X{3}
+\def\@pac@Small@ghost@clothD@X{2}
+\def\@pac@Small@ghost@clothD@control@X{1.75}
+
+\def\@pac@Small@ghost@clothE@X{2.5}
+\def\@pac@Small@ghost@clothE@Y{0.7}
+\def\@pac@Small@ghost@clothE@control@X{2.2}
+
+\def\@pac@Small@ghost@clothF@X{3}
+\def\@pac@Small@ghost@clothF@control@X{2.875}
 
 \newcommand*\@pac@Small@ghost[3]{%
     \setlength\unitlength{\fontdimen 22 #1\tw@}%
     \vrule \@width\z@ \@height\z@ \@depth\@ne\unitlength%
-    \begin{picture}(3.6,3.6)(-0.2,.7)
+    \begin{picture}(3.6,3.6)(-0.2,.45)
         \linethickness{#2\p@}%
         \put(0, 0){\line(0, \@pac@Small@ghost@body@height){\@pac@Small@ghost@body@height}}
         \qbezier(0, \@pac@Small@ghost@body@height)(\@pac@Small@ghost@body@arc@X, \@pac@Small@ghost@body@arc@Y)(\@pac@Small@ghost@body@height, \@pac@Small@ghost@body@height)
@@ -83,7 +90,9 @@
         \qbezier(0,0)(\@pac@Small@ghost@clothA@control@X, \@pac@Small@ghost@cloth@outer@control@Y)(\@pac@Small@ghost@clothA@X, \@pac@Small@ghost@clothA@Y)
         \qbezier(\@pac@Small@ghost@clothA@X, \@pac@Small@ghost@clothA@Y)(\@pac@Small@ghost@clothB@control@X, \@pac@Small@ghost@cloth@inner@control@Y)(\@pac@Small@ghost@clothB@X, 0)
         \qbezier(\@pac@Small@ghost@clothB@X, 0)(\@pac@Small@ghost@clothC@control@X, \@pac@Small@ghost@cloth@inner@control@Y)(\@pac@Small@ghost@clothC@X, \@pac@Small@ghost@clothC@Y)
-        \qbezier(\@pac@Small@ghost@clothC@X, \@pac@Small@ghost@clothC@Y)(\@pac@Small@ghost@clothD@control@X, \@pac@Small@ghost@cloth@outer@control@Y)(\@pac@Small@ghost@clothD@X, 0)
+        \qbezier(\@pac@Small@ghost@clothC@X, \@pac@Small@ghost@clothC@Y)(\@pac@Small@ghost@clothD@control@X, \@pac@Small@ghost@cloth@inner@control@Y)(\@pac@Small@ghost@clothD@X, 0)
+        \qbezier(\@pac@Small@ghost@clothD@X, 0)(\@pac@Small@ghost@clothE@control@X,\@pac@Small@ghost@cloth@inner@control@Y)(\@pac@Small@ghost@clothE@X, \@pac@Small@ghost@clothE@Y)
+        \qbezier(\@pac@Small@ghost@clothE@X, \@pac@Small@ghost@clothE@Y)(\@pac@Small@ghost@clothF@control@X, \@pac@Small@ghost@cloth@outer@control@Y)(\@pac@Small@ghost@clothF@X, 0)
         \if@pac@eye@
             \put(\@pac@Small@ghost@eyeL@X, \@pac@Small@ghost@eye@Y){\circle*{#3}}
             \put(\@pac@Small@ghost@eyeR@X, \@pac@Small@ghost@eye@Y){\circle*{#3}}
@@ -112,9 +121,7 @@
 \def\@pac@Small@bold@sscriptfont@thickness{0.01}
 \def\@pac@Small@bold@sscriptfont@eye{0}
 
-\def\@pac@Large@textfont@thickness{0.82}
-\def\@pac@Large@textfont@eye{}
-\def\@pac@Small@textfont@thickness{0.45}
+\def\@pac@Small@textfont@thickness{0.4}
 \def\@pac@Small@textfont@eye{0.45}
 \def\@pac@Small@scriptfont@thickness{0.2}
 \def\@pac@Small@scriptfont@eye{0.4}
