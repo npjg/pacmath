@@ -47,60 +47,6 @@
 }
 
 
-%%% Large Ghost %%%
-\def\@pac@Large@ghost@body@height{6}
-\def\@pac@Large@ghost@body@arc@X{3}
-\def\@pac@Large@ghost@body@arc@Y{9.25}
-\def\@pac@Large@ghost@eyeL@X{4.35}
-\def\@pac@Large@ghost@eyeR@X{2.50}
-\def\@pac@Large@ghost@eye@Y{4.5}
-
-\def\@pac@Large@ghost@cloth@outer@control@Y{0.25}
-\def\@pac@Large@ghost@cloth@inner@control@Y{1}
-
-\def\@pac@Large@ghost@clothA@X{1}
-\def\@pac@Large@ghost@clothA@Y{1}
-\def\@pac@Large@ghost@clothA@control@X{.25}
-
-\def\@pac@Large@ghost@clothB@X{2}
-\def\@pac@Large@ghost@clothB@control@X{1.5}
-
-\def\@pac@Large@ghost@clothC@X{3}
-\def\@pac@Large@ghost@clothC@Y{1}
-\def\@pac@Large@ghost@clothC@control@X{2.5}
-
-\def\@pac@Large@ghost@clothD@X{4}
-\def\@pac@Large@ghost@clothD@control@X{3.5}
-
-\def\@pac@Large@ghost@clothE@X{5}
-\def\@pac@Large@ghost@clothE@Y{1}
-\def\@pac@Large@ghost@clothE@control@X{4.5}
-
-\def\@pac@Large@ghost@clothF@X{6}
-\def\@pac@Large@ghost@clothF@control@X{5.75}
-
-\newcommand*\@pac@Large@ghost[3]{%
-    \setlength\unitlength{\fontdimen 22 #1\tw@}%
-    \vrule \@width\z@ \@height 5\unitlength \@depth\thr@@\unitlength%
-    \begin{picture}(10,4)(-3,2.5)
-        \linethickness{#2\p@}%
-        \put(0, 0){\line(0, \@pac@Large@ghost@body@height){\@pac@Large@ghost@body@height}}
-        \qbezier(0, \@pac@Large@ghost@body@height)(\@pac@Large@ghost@body@arc@X, \@pac@Large@ghost@body@arc@Y)(\@pac@Large@ghost@body@height, \@pac@Large@ghost@body@height)
-        \put(\@pac@Large@ghost@body@height, 0){\line(0, \@pac@Large@ghost@body@height){\@pac@Large@ghost@body@height}}
-        \qbezier(0,0)(\@pac@Large@ghost@clothA@control@X, \@pac@Large@ghost@cloth@outer@control@Y)(\@pac@Large@ghost@clothA@X, \@pac@Large@ghost@clothA@Y)
-        \qbezier(\@pac@Large@ghost@clothA@X, \@pac@Large@ghost@clothA@Y)(\@pac@Large@ghost@clothB@control@X, \@pac@Large@ghost@cloth@inner@control@Y)(\@pac@Large@ghost@clothB@X, 0)
-        \qbezier(\@pac@Large@ghost@clothB@X, 0)(\@pac@Large@ghost@clothC@control@X, \@pac@Large@ghost@cloth@inner@control@Y)(\@pac@Large@ghost@clothC@X, \@pac@Large@ghost@clothC@Y)
-        \qbezier(\@pac@Large@ghost@clothC@X, \@pac@Large@ghost@clothC@Y)(\@pac@Large@ghost@clothD@control@X, \@pac@Large@ghost@cloth@inner@control@Y)(\@pac@Large@ghost@clothD@X, 0)
-        \qbezier(\@pac@Large@ghost@clothD@X, 0)(\@pac@Large@ghost@clothE@control@X,\@pac@Large@ghost@cloth@inner@control@Y)(\@pac@Large@ghost@clothE@X, \@pac@Large@ghost@clothE@Y)
-        \qbezier(\@pac@Large@ghost@clothE@X, \@pac@Large@ghost@clothE@Y)(\@pac@Large@ghost@clothF@control@X, \@pac@Large@ghost@cloth@outer@control@Y)(\@pac@Large@ghost@clothF@X, 0)
-        \if@pac@eye@
-            \put(\@pac@Large@ghost@eyeL@X, \@pac@Large@ghost@eye@Y){\circle*{#3}}%
-            \put(\@pac@Large@ghost@eyeR@X, \@pac@Large@ghost@eye@Y){\circle*{#3}}%
-        \fi
-    \end{picture}
-}
-
-
 %%% Small Ghost %%%
 \def\@pac@Small@ghost@body@height{3}
 \def\@pac@Small@ghost@body@arc@X{1.5}
