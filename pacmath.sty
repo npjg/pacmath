@@ -61,11 +61,12 @@
 
 
 %%% Small Ghost %%%
-\def\@pac@Small@ghost@body@height{3}
+\def\@pac@Small@ghost@body@height{2.5}
+\def\@pac@Small@ghost@body@width{3}
 \def\@pac@Small@ghost@body@arc@X{1.5}
-\def\@pac@Small@ghost@body@arc@Y{4.5}
-\def\@pac@Small@ghost@eyeL@X{2.125}
-\def\@pac@Small@ghost@eyeR@X{1.2}
+\def\@pac@Small@ghost@body@arc@Y{5.}
+\def\@pac@Small@ghost@eyeL@X{1.12}
+\def\@pac@Small@ghost@eyeR@X{2.12}
 \def\@pac@Small@ghost@eye@Y{2.25}
 
 \def\@pac@Small@ghost@cloth@outer@control@Y{0.4}
@@ -98,8 +99,8 @@
     \begin{picture}(3.6,3.6)(-0.2,.45)
         \linethickness{#2\p@}%
         \put(0, 0){\line(0, \@pac@Small@ghost@body@height){\@pac@Small@ghost@body@height}}
-        \qbezier(0, \@pac@Small@ghost@body@height)(\@pac@Small@ghost@body@arc@X, \@pac@Small@ghost@body@arc@Y)(\@pac@Small@ghost@body@height, \@pac@Small@ghost@body@height)
-        \put(\@pac@Small@ghost@body@height, 0){\line(0, \@pac@Small@ghost@body@height){\@pac@Small@ghost@body@height}}
+        \put(\@pac@Small@ghost@body@arc@X, \@pac@Small@ghost@body@height){\oval(\@pac@Small@ghost@body@width, \@pac@Small@ghost@body@height)[t]}
+        \put(\@pac@Small@ghost@body@width, 0){\line(0, \@pac@Small@ghost@body@height){\@pac@Small@ghost@body@height}}
         \qbezier(0,0)(\@pac@Small@ghost@clothA@control@X, \@pac@Small@ghost@cloth@outer@control@Y)(\@pac@Small@ghost@clothA@X, \@pac@Small@ghost@clothA@Y)
         \qbezier(\@pac@Small@ghost@clothA@X, \@pac@Small@ghost@clothA@Y)(\@pac@Small@ghost@clothB@control@X, \@pac@Small@ghost@cloth@inner@control@Y)(\@pac@Small@ghost@clothB@X, 0)
         \qbezier(\@pac@Small@ghost@clothB@X, 0)(\@pac@Small@ghost@clothC@control@X, \@pac@Small@ghost@cloth@inner@control@Y)(\@pac@Small@ghost@clothC@X, \@pac@Small@ghost@clothC@Y)
