@@ -44,20 +44,20 @@
 \def\@pac@man@eye@X{0.15}
 \def\@pac@man@eye@Y{0.88}
 
-\newcommand*\@pac@man[3]{%
+\newcommand*\@pac@man[4]{%
     \setlength\unitlength{\fontdimen 22 #1\tw@}%
     \vrule \@width\z@ \@height\z@ \@depth\@ne\unitlength%
-    \begin{picture}(2.75,2.85)(-1.35,-1.)
-        \linethickness{#2\p@}%
+    \begin{picture}(2.75,2.85)(-1.32,-1.)
+        \linethickness{#4\p@}%
         \qbezier(0, 0)(\@pac@man@regionA@control@X, \@pac@man@regionA@control@Y)(\@pac@man@X, \@pac@man@Y)%
-        %\linethickness{#4\p@}%
         \qbezier(\@pac@man@X, \@pac@man@Y)(\@pac@man@regionB@control@X, \@pac@man@regionB@control@Y)(0, \@pac@man@T)%
-        %\linethickness{#2\p@}%
         \qbezier(0, \@pac@man@T)(-\@pac@man@regionB@control@X, \@pac@man@regionB@control@Y)(-\@pac@man@X, \@pac@man@Y)%
+        \linethickness{#2\p@}%
         \qbezier(-\@pac@man@X, \@pac@man@Y)(-\@pac@man@regionC@control@X, 0)(-\@pac@man@X, -\@pac@man@Y)%
         \qbezier(-\@pac@man@X, -\@pac@man@Y)(-\@pac@man@regionB@control@X, -\@pac@man@regionB@control@Y)(0, -\@pac@man@T)%
         \qbezier(0, -\@pac@man@T)(\@pac@man@regionB@control@X, -\@pac@man@regionB@control@Y)(\@pac@man@X, -\@pac@man@Y)%
         \qbezier(\@pac@man@X, -\@pac@man@Y)(\@pac@man@regionA@control@X, -\@pac@man@regionA@control@Y)(0, 0)%
+
         \if@pac@eye@
             \put(\@pac@man@eye@X, \@pac@man@eye@Y){\circle*{#3}}%
         \fi
@@ -139,7 +139,7 @@
 \def\@pac@bold@sscriptfont@thickness{0.01}
 \def\@pac@bold@sscriptfont@eye{0}
 
-\def\@pac@textfont@man@thickness{0.5}
+\def\@pac@textfont@man@thickness{0.56}
 \def\@pac@textfont@man@thickness@nib{0.4}
 \def\@pac@textfont@ghost@thickness{0.55}
 \def\@pac@textfont@man@eye{0.4}
@@ -153,23 +153,23 @@
     \mathop{%
         \@pac@if@bold@math{%
             \mathchoice{%
-                \@pac@man \textfont {\@pac@bold@textfont@thickness}{\@pac@bold@textfont@eye}%
+                \@pac@man \textfont {\@pac@bold@textfont@thickness}{\@pac@bold@textfont@eye}{\@pac@textfont@man@thickness@nib}%
             }{%
-                \@pac@man \textfont {\@pac@bold@textfont@thickness}{\@pac@bold@textfont@eye}%
+                \@pac@man \textfont {\@pac@bold@textfont@thickness}{\@pac@bold@textfont@eye}{\@pac@textfont@man@thickness@nib}%
             }{%
-                \@pac@man \scriptfont {\@pac@bold@scriptfont@thickness}{\@pac@bold@scriptfont@eye}%
+                \@pac@man \scriptfont {\@pac@bold@scriptfont@thickness}{\@pac@bold@scriptfont@eye}{\@pac@textfont@man@thickness@nib}%
             }{%
-                \@pac@man \scriptscriptfont {\@pac@bold@sscriptfont@thickness}{\@pac@bold@sscriptfont@eye}%
+                \@pac@man \scriptscriptfont {\@pac@bold@sscriptfont@thickness}{\@pac@bold@sscriptfont@eye}{\@pac@textfont@man@thickness@nib}%
             }%
         }{%
             \mathchoice{%
-                \@pac@man \textfont {\@pac@textfont@man@thickness}{\@pac@textfont@man@eye}%
+                \@pac@man \textfont {\@pac@textfont@man@thickness}{\@pac@textfont@man@eye}{\@pac@textfont@man@thickness@nib}%
             }{%
-                \@pac@man \textfont {\@pac@textfont@man@thickness}{\@pac@textfont@man@eye}%
+                \@pac@man \textfont {\@pac@textfont@man@thickness}{\@pac@textfont@man@eye}{\@pac@textfont@man@thickness@nib}%
             }{%
-                \@pac@man \scriptfont {\@pac@scriptfont@thickness}{\@pac@scriptfont@eye}%
+                \@pac@man \scriptfont {\@pac@scriptfont@thickness}{\@pac@scriptfont@eye}{\@pac@textfont@man@thickness@nib}%
             }{%
-                \@pac@man \scriptscriptfont {\@pac@sscriptfont@thickness}{\@pac@sscriptfont@eye}%
+                \@pac@man \scriptscriptfont {\@pac@sscriptfont@thickness}{\@pac@sscriptfont@eye}{\@pac@textfont@man@thickness@nib}%
             }%
         }%
     }% \displaylimits % as per default
