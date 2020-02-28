@@ -18,14 +18,21 @@
 \maketitle
 \epigraph{``Let's call this thing Pac-Man."}{--- \textup{Dr. Cook}}
 \section{Introduction}
-Pacmath finally brings everyone's favorite ad-hoc mathematical symbol to \LaTeX. Don't know what to call an ugly expression you would hate to rewrite again and again? Don't fret, just call it $\pacman$ !
+Pacmath finally brings everyone's favorite ad-hoc mathematical symbol to \LaTeX.
+Don't know what to call an ugly expression you would hate to rewrite again and
+again? Don't fret, just call it $\pacman$ !
 
 \section{Operator}
-$\pacman$ is not a real character; he isn't found in any \TeX{} font. He is a picture with special configuration so he blends in with the crowd. His shape-shifting powers are quite amazing. He has real \TeX{} \textit{bona fides}. He can use his powers to convert arbitrary symbols and pictures to operators. Here, we'll make some new operators and put our friend in there with them:
+$\pacman$ is not a real character; he isn't found in any \TeX{} font. He is a
+picture with special configuration so he blends in with the crowd. His
+shape-shifting powers are quite amazing. He has real \TeX{} \textit{bona fides}.
+He can use his powers to convert arbitrary symbols and pictures to operators.
+Here, we'll make some new operators and put our friend in there with them:
 \[
 \sum_{i=1}^n\bigA_{i=1}^n\bigDelta_{i=1}^n\bigpacman_{i=1}^n \cdots.
 \]
-Slick, eh? We put him in there using the \texttt{\textbackslash bigpacman} command, just like you would use \texttt{\textbackslash bigoplus}.
+Slick, eh? We put him in there using the \texttt{\textbackslash bigpacman}
+command, just like you would use \texttt{\textbackslash bigoplus}.
 
 If that didn't scare you, maybe this will:
 \[
@@ -36,10 +43,14 @@ You can summon a big ghost with \texttt{\textbackslash bigghost}.
 Even in inline math mode, the limits still behave as you would expect: $\pacman_{i=1}^n$.
 
 \section{Symbol}
-Our friend doesn't always need these superpowers, however. He's also fine going incognito inside a paragraph. Let's test for ``operator-like'' behavior: $f(x)$ versus $\pacman(x)$. He looks like he's just about ready to gobble up that $x$! But here comes Blinky to stop him! $$\ghost(x) \cdots \cdots \pacman(x).$$
+Our friend doesn't always need these superpowers, however. He's also fine going
+incognito inside a paragraph. Let's test for ``operator-like'' behavior: $f(x)$
+versus $\pacman(x)$. He looks like he's just about ready to gobble up that $x$!
+But here comes Blinky to stop him! $$\ghost(x) \cdots \cdots \pacman(x).$$
 
 \section{Eyes}
-Just like you remove numbering from an equation with an asterisk, so you can remove the eyes from our friend and his ghost.
+Just like you remove numbering from an equation with an asterisk, so you can
+remove the eyes from our friend and his ghost.
 $$\ghost*(x) \cdots \cdots \pacman*(x).$$
 
 \section{Bold}
@@ -59,6 +70,10 @@ Compare it with \texttt{normal} math\mathversion{normal}:
 \]
 
 \section{Edge Cases}
-$\pacman$ is at home in all math styles. Just check this out: subscript~$F_{\pacman\alpha}$; in-line fraction \( \frac{\pacman m}{\pacman n} \); double superscript \( 2^{2^{\, \pacman \aleph_{0}}} \). Note that as our friend shrinks, his eye cleanly disappears.
+$\pacman$ is at home in all math styles. Just check this out:
+subscript~$F_{\pacman\alpha}$; in-line fraction
+\( \frac{\pacman m}{\pacman n} \); double superscript
+\( 2^{2^{\, \pacman \aleph_{0}}} \). Note that as our friend shrinks, his eye
+cleanly disappears.
 
 \end{document}
