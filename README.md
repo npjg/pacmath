@@ -2,7 +2,7 @@
 In the spirit of [`haloweenmath`][haloweenmath], you can generate Pacman and an archetypcal ghost as math symbols and binary operators in LaTeX.
 
 ## Acknowledgements
- - Dr. James Cook, for his zany love of Pacman as a lecture aid.
+ - [Dr. James Cook](http://www.supermath.info), for his zany love of Pacman as a lecture aid.
  - G. Mezzetti, author of `haloweenmath`,  for his insight into defining custom operators.
 
 The user-level commands were adapted from the [2016 Seasonal Challenge][challenge-question] that inspired `haloweenmath`, and the bigop logic was adapted from an example given by the TeX wizard himself, [egreg][egreg-question].
